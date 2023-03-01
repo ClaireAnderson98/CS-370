@@ -1,2 +1,38 @@
-testing
-testing 2
+<!DOCTYPE html>
+<html>
+<head>
+<script type=“text/JavaScript”
+	src=“clear.js”>
+</script>
+<script id=“vertex-shader”
+	type=“x-shader/x-vertex”>
+uniform mat4 P;
+uniform mat4 MV;
+in vec4 aPosition;
+out vec4 vColor;
+
+void main()
+{
+	gl_Positions = P * MV * aPosition;
+	vColor = aPosition.xyz + 0.5;
+}
+</script>
+<script if=“fragment-shader”
+	type=“x-shader/x-fragment”>
+precision highp float;
+
+in vec4 vColor;
+out vec4 fColor;
+
+void main()
+{
+	fColor = vColor;
+}
+</script>
+</head>
+
+<body>
+<canvas id=“webgl-canvas” width=“512”
+height=“512”></canvas>
+</body>
+</html>
