@@ -12,6 +12,8 @@ function init() {
 function render() {
   gl.clear(gl.COLOR_BUFFER_BIT |
            gl.DEPTH_BUFFER_BIT);
+  cube.MV = rotateX(1);
+  cube.P = perspective (?, ?, 0, 1);
   cube.render();
   requestAnimationFrame(render);
 }
