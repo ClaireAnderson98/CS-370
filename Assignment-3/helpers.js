@@ -127,12 +127,12 @@ function Uniform(gl, program, variable, type) {
 //
 //  Configure element buffers.
 //
-function Element(gl, indices) {
+function Indices(gl, indices) {
 
     let typedArray = undefined;
     let type = undefined;
 
-    let max = Math.max.apply(null, indices);
+    let max = indices.reduce((x, m) => { return x > m ? x : m; });
     if (max < 256) {
         typedArray = new Uint8Array(indices);
         type = gl.UNSIGNED_BYTE;
@@ -155,3 +155,4 @@ function Element(gl, indices) {
     this.enable = () => gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffer);
     this.disable = () => gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
 }
+
