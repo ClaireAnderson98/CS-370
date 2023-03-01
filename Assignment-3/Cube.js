@@ -10,14 +10,14 @@ function Cube (gl, vertexShaderId, fragmentShaderId) {
     return;
   }
   positions = [ 0.5, 0.5, 0.5,   //vertex 0
-               0.5, -0.5, 0.5,   //vertex 1
-               -0.5, 0.5, 0.5,   //vertex 2
-               -0.5, -0.5, 0.5,  //vertex 3
-               -0.5, 0.5, -0.5,  //vertex 4
+               0.5, 0.5, -0.5,   //vertex 1
+               -0.5, 0.5, -0.5,  //vertex 2
+               -0.5, 0.5, 0.5,   //vertex 3
+               -0.5, -0.5, 0.5,  //vertex 4
                -0.5, -0.5, -0.5, //vertex 5
-               0.5, 0.5, -0.5,   //vertex 6
+               0.5, -0.5, 0.5,   //vertex 6
                0.5, -0.5, -0.5]; //vertex 7
-  indices = [ 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 3, 7, 5, 4, 6, 2, 0];
+  indices = [ 0, 1, 3, 2, 4, 5, 6, 7, 0, 1, 2, 7, 5, 6, 4, 0, 3];
   const count = indices.length;
   aPosition = new Attribute (gl, shaderProgram, positions, "aPosition", 3, gl.FLOAT);
   indices = new Indices (gl, indices);
