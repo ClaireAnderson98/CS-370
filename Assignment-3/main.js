@@ -14,7 +14,7 @@ function render() {
            gl.DEPTH_BUFFER_BIT);
   cube.MV = rotateX(1);
   cube.P = perspective (90, 1.0, 1, 3);
-  cube.MV = translate(0, 0, 2);
+  cube.MV = translate(0, 0, -2);
   cube.render();
   requestAnimationFrame(render);
 }
