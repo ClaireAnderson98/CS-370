@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type=“text/JavaScript” src=“main.js”></script>
+<script type="text/JavaScript" src="main.js"></script>
 <script type="text/JavaScript" src="Cube.js"></script>
 <script type="text/JavaScript" src="helpers.js"></script>
 <script type="text/JavaScript" src="initShaders.js"></script>
 <script type="text/JavaScript" src="main.js"></script>
 <script type ="text/JavaScript" src="MatrixStack.js"></script>
 <script type="test/JavaScript" src="MV.js"></script>
-<script id=“Cube-vertex-shader” type=“x-shader/x-vertex”>
+<script id="Cube-vertex-shader" type="x-shader/x-vertex">
 uniform mat4 P;
 uniform mat4 MV;
 in vec4 aPosition;
@@ -20,8 +20,8 @@ void main()
 	vColor = aPosition.xyz + 0.5;
 }
 </script>
-<script if=“Cube-fragment-shader”
-	type=“x-shader/x-fragment”>
+<script if="Cube-fragment-shader"
+	type="x-shader/x-fragment">
 precision highp float;
 
 in vec4 vColor;
@@ -35,7 +35,6 @@ void main()
 </head>
 
 <body>
-<canvas id=“webgl-canvas” width=“512”
-height=“512”></canvas>
+<canvas id="webgl-canvas" width="512" height="512"></canvas>
 </body>
 </html>
